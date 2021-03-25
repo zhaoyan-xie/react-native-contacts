@@ -4,7 +4,7 @@ import { Color } from "../../colors";
 import { data } from "../../data/data";
 
 export const ContactList = ({ navigation }) => {
-	const { itemStyle, avatarStyle, itemContainerStyle } = styles;
+	const { itemStyle, avatarStyle, itemContainerStyle, listItemSeparatorStyle } = styles;
 	return (
 		<FlatList
 			data={data}
@@ -16,6 +16,9 @@ export const ContactList = ({ navigation }) => {
 					</Text>
 				</View>
 			)}
+			ItemSeparatorComponent={() => {
+				return <View style={listItemSeparatorStyle} />;
+			}}
 			keyExtractor={(item) => item.id}
 		/>
 	);
@@ -36,11 +39,12 @@ const styles = StyleSheet.create<Style>({
 		backgroundColor: Color.theme,
 	},
 	itemContainerStyle: {
-		height: 64,
+		height: "auto",
 		flex: 1,
 		flexDirection: "row",
-		padding: 12,
-		marginVertical: 8,
+		paddingHorizontal: 12,
+		paddingVertical: 6,
+		backgroundColor: "#fff",
 	},
 	itemStyle: {
 		alignSelf: "center",
