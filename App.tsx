@@ -43,8 +43,8 @@ const App = () => {
 					options={{
 						title: null,
 						headerStyle: defaultHeaderStyle,
-						headerLeft: () => (
-							<TouchableOpacity style={{ marginLeft: 12 }}>
+						headerLeft: ({ onPress: goBack }) => (
+							<TouchableOpacity style={{ marginLeft: 12 }} onPress={goBack}>
 								<Text style={{ color: Color.theme }}>Cancel</Text>
 							</TouchableOpacity>
 						),

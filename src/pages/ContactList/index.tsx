@@ -11,7 +11,7 @@ export const ContactList = ({ navigation }) => {
 			renderItem={({ item }) => (
 				<View style={itemContainerStyle}>
 					<View style={avatarStyle} />
-					<Text style={itemStyle} onPress={() => navigation.navigate("ContactDetails")}>
+					<Text style={itemStyle} onPress={() => navigation.navigate("ContactDetails", { contact: item })}>
 						{`${item.firstName} ${item.lastName}`}
 					</Text>
 				</View>
