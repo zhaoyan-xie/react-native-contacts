@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "es6",
+		"moduleResolution": "node",
+		"jsx": "react",
+		"baseUrl": ".",
+		"outDir": "build",
+		// "allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"noImplicitAny": false,
+		"preserveConstEnums": true,
+		"allowJs": true,
+		"sourceMap": true,
+		"noImplicitReturns": true,
+		"noUnusedParameters": false,
+		// temporarily disabling both unused flags for migration exercise
+		"noUnusedLocals": false,
+		"skipLibCheck": true,
+		"types": [
+			"react",
+			"react-native",
+			"jest"
+		],
+		"plugins": [
+			{
+				"transform": "ts-auto-mock/transformer",
+				"cacheBetweenTests": false
+			}
+		]
+	},
+	"exclude": [
+		"android",
+		"ios",
+		"build",
+		"node_modules"
+	],
+	"include": [
+		"src"
+	],
+	"compileOnSave": false
+}
