@@ -1,7 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
+import { Text } from "react-native";
 import "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Color } from "./src/colors";
 import { ContactDetails } from "./src/pages/ContactDetails";
 import { ContactList } from "./src/pages/ContactList";
 
@@ -22,6 +25,16 @@ const App = () => {
 					options={{
 						title: "Contacts",
 						headerStyle: defaultHeaderStyle,
+						headerLeft: () => (
+							<TouchableOpacity style={{ marginLeft: 12 }}>
+								<Text style={{ color: Color.theme }}>Search</Text>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity style={{ marginRight: 12 }}>
+								<Text style={{ color: Color.theme }}>Add</Text>
+							</TouchableOpacity>
+						),
 					}}
 				/>
 				<Stack.Screen
