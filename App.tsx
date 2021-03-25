@@ -41,8 +41,18 @@ const App = () => {
 					name="ContactDetails"
 					component={ContactDetails}
 					options={{
-						// title: "Contacts",
+						title: null,
 						headerStyle: defaultHeaderStyle,
+						headerLeft: () => (
+							<TouchableOpacity style={{ marginLeft: 12 }}>
+								<Text style={{ color: Color.theme }}>Cancel</Text>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity style={{ marginRight: 12 }}>
+								<Text style={{ color: Color.theme }}>Save</Text>
+							</TouchableOpacity>
+						),
 					}}
 				/>
 			</Stack.Navigator>
